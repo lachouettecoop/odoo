@@ -150,7 +150,7 @@ class CompanyLDAP(osv.osv):
         :rtype: dict
         """
 
-        values = { 'name': ldap_entry[1]['cn'][0],
+        values = { 'name': '{0} {1}'.format(ldap_entry[1]['description'][0], ldap_entry[1]['sn'][0]),
                    'login': login,
                    'company_id': conf['company']
                    }
